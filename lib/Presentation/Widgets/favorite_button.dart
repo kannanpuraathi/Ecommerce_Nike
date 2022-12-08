@@ -1,3 +1,4 @@
+import 'package:ecom_app/Presentation/Pages/favorite_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,19 +39,31 @@ class _FavoriteButtonState extends State<FavoriteButton> {
             onPressed: () {
               if (value) {
                 changeIndex(false);
+                context.read<WishlistBloc>().add(RemoveWishlistProduct(product:widget.product));
+                const snackBar = SnackBar(
+                  content: Text(
+                    'Removed from Wishlist',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  duration: Duration(milliseconds: 300),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               } else if (!value) {
                 changeIndex(true);
+                context
+                    .read<WishlistBloc>()
+                    .add(AddWishlistProduct(product: widget.product));
+                const snackBar = SnackBar(
+                  content: Text(
+                    'Added to your Wishlist',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  duration: Duration(milliseconds: 300),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar,);
+                print(wishlistContent);
               }
-              context
-                  .read<WishlistBloc>()
-                  .add(AddWishlistProduct(product: widget.product));
-              const snackBar = SnackBar(
-                content: Text(
-                  'Added to your Wishlist',
-                  style: TextStyle(fontSize: 17),
-                ),
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
             },
             color: value == false ? Colors.grey : Colors.red,
           );

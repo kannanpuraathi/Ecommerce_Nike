@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../Business_Logic/Bloc/wishlist/wishlist_bloc.dart';
 import '../Widgets/product_card.dart';
-
+ List wishlistContent = [];
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
 
@@ -38,6 +38,7 @@ class _FavoritePageState extends State<FavoritePage> {
                   itemCount: state.wishList.products.length,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
+                    wishlistContent = state.wishList.products;
                     return ProductCard(
                       product: state.wishList.products[index],
                       isWishlist: true,

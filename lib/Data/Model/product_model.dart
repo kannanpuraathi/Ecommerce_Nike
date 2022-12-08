@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Product extends Equatable {
+  final int id;
   final String name;
   final String category;
   final String imageUrl;
@@ -9,7 +10,7 @@ class Product extends Equatable {
   final bool isTrending;
   final List size;
 
-  const Product({required this.name,
+  const Product({required this.id, required this.name,
     required this.category,
     required this.imageUrl,
     required this.price,
@@ -19,9 +20,10 @@ class Product extends Equatable {
 
   @override
   List<Object?> get props =>
-      [name, category, imageUrl, price, isTrending, size];
+      [id, name, category, imageUrl, price, isTrending, size];
   static List<Product> products = [
     const Product(
+      id: 1,
       name: 'Air Jordan 1 Retro High OG',
       category: 'Mid-ankle Shoes',
       imageUrl:
@@ -31,6 +33,7 @@ class Product extends Equatable {
       isTrending: true,
       size: [7, 8, 9, 10, 11, 12],),
     const Product(
+      id: 2,
       name: 'Air Jordan XXXVII PF',
       category: 'Sports Shoes',
       imageUrl:
@@ -41,6 +44,7 @@ class Product extends Equatable {
       size: [7, 8, 9, 10,11],
     ),
     const Product(
+      id: 3,
       name: 'Nike Air Force 1',
       category: 'Sneakers',
       imageUrl:
@@ -50,6 +54,7 @@ class Product extends Equatable {
       isTrending: true,
       size: [6, 7, 8, 9, 10,11,12],),
     const Product(
+      id: 4,
       name: 'Nike Air Force 1',
       category: 'Sneakers',
       imageUrl:
@@ -59,6 +64,7 @@ class Product extends Equatable {
       isTrending: true,
       size: [7, 8, 9, 10],),
     const Product(
+      id:5,
       name: 'Nike Air Max Alpha Trainer 5',
       category: 'Air Shoes',
       imageUrl:
@@ -68,6 +74,7 @@ class Product extends Equatable {
       isTrending: false,
       size: [7, 9, 10],),
     const Product(
+      id: 6,
       name: 'Nike Air Max 90 ',
       category: 'Air Shoes',
       imageUrl:
