@@ -19,7 +19,7 @@ class LandscapeProductCard extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 10, vertical: 10.0),
             child: Row(
               children: [
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                 //  color: Colors.cyan,
@@ -34,7 +34,6 @@ class LandscapeProductCard extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      // color: Colors.red,
                       padding: const EdgeInsets.only(top:10,left: 10),
                       height: 100,
                       width: 170,

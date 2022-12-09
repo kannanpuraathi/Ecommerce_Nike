@@ -1,6 +1,5 @@
 import 'package:ecom_app/Presentation/Widgets/landscapeproduct_card.dart';
 import 'package:flutter/material.dart';
-
 import '../../Data/Model/model.dart';
 import 'widget.dart';
 class LandscapeCarousel extends StatelessWidget {
@@ -9,7 +8,7 @@ class LandscapeCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 200,
         child: ListView.builder(
             shrinkWrap: true,
